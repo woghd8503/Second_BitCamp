@@ -5,18 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Character.cs" />
-    <Compile Remove="HomeWork.cs" />
-    <Compile Remove="HomeWork1.cs" />
-    <Compile Remove="HomeWork2.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Character.cs" />
-    <None Include="HomeWork.cs" />
-    <None Include="HomeWork1.cs" />
-    <None Include="HomeWork2.cs" />
-  </ItemGroup>
-
 </Project>

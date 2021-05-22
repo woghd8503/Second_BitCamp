@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _20_Character
+namespace _001_Homework_05_20
 {
     class HomeWork
     {

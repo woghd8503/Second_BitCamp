@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _20_Character
+namespace _001_Homework_05_20
 {
     class HomeWork3
     {
-        static void Main()
+        static void Main(string[] args)
         {
             // 1번 문제
             while (true)

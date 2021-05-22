@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_18_For", "_18_For\_18_For.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_19_For", "_19_For\_19_For.csproj", "{7E803582-C724-456D-8F83-AE286C41C187}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_20_Character_HW", "_20_Character\_20_Character_HW.csproj", "{1A1A4DC6-BE11-42E9-9944-03C134503DD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_20_Character", "_20_Character\_20_Character.csproj", "{1A1A4DC6-BE11-42E9-9944-03C134503DD3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_21_For", "_21_For\_21_For.csproj", "{FD12F981-6BA5-4A5E-90BA-2937D8346922}"
 EndProject
@@ -63,9 +63,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_29_MoveSharp", "_29_MoveSh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_30_MoveSharp", "_30_MoveSharp\_30_MoveSharp.csproj", "{FF7DC669-A990-4FF4-80E0-E6C5DFFED7E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_001_Homework", "_001_Homework\_001_Homework.csproj", "{85B2321E-3274-40DA-8B6E-53CD110754B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_001_Homework_0520", "_001_Homework\_001_Homework_0520.csproj", "{85B2321E-3274-40DA-8B6E-53CD110754B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_002_Homework_05.21", "_002_Homework_05.21\_002_Homework_05.21.csproj", "{0F7D8007-ABEB-4556-BCF7-D51E053F3057}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_002_Homework_0521", "_002_Homework_05.21\_002_Homework_0521.csproj", "{0F7D8007-ABEB-4556-BCF7-D51E053F3057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

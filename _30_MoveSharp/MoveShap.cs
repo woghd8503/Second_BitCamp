@@ -8,8 +8,8 @@ namespace _28_MoveShap
         {
             int x = 0, y = 12, x1 = 0, y1 = 0;
             
-            // 1. #이 끝에 닿으면 다시 처음부터 등장
-            /*            while (x <= 80)
+             1. #이 끝에 닿으면 다시 처음부터 등장
+                        while (x <= 80)
                         {
                             Console.CursorLeft = x;
                             Console.CursorTop = y;
@@ -21,10 +21,10 @@ namespace _28_MoveShap
                             x++;
                             if (x == 80)
                                 x = 0;
-                        }*/
+                        }
 
-            // 2. #이 왕복하도록 할 것
-            /*            while (x <= 80)
+             2. #이 왕복하도록 할 것
+                        while (x <= 80)
                         {
                             Console.CursorLeft = x;
                             Console.CursorTop = y;
