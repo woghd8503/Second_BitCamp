@@ -7,12 +7,14 @@
 
   <ItemGroup>
     <Compile Remove="HomeWork.cs" />
+    <Compile Remove="HomeWork1.cs" />
     <Compile Remove="HomeWork2.cs" />
     <Compile Remove="HomeWork3.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="HomeWork.cs" />
+    <None Include="HomeWork1.cs" />
     <None Include="HomeWork2.cs" />
     <None Include="HomeWork3.cs" />
   </ItemGroup>
