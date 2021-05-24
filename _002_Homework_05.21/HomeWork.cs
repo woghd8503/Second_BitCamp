@@ -136,7 +136,7 @@ namespace _002_Homework_05_21
             int input = Int32.Parse(Console.ReadLine());
             Console.WriteLine();
 
-            for (int i = 0; i <= 9; ++i)
+            for (int i = 1; i <= 9; ++i)
             {
                 Console.WriteLine("{0} x {1} = {2}", input, i, input * i);
             }
