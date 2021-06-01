@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F8B810B-85A0-462D-B67F-7BD740784C6D}</ProjectGuid>
+    <ProjectGuid>{03BF8738-2C8C-4004-B8FA-524ACFE2F787}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_59_AddressMethod</RootNamespace>
-    <AssemblyName>_59_AddressMethod</AssemblyName>
+    <RootNamespace>_61_AddressClass</RootNamespace>
+    <AssemblyName>_61_AddressClass</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,7 +36,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressMethodEx.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="AddressClassMain.cs" />
+    <Compile Include="AddressFile.cs" />
+    <Compile Include="AddressManager.cs" />
+    <Compile Include="AddressMenu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

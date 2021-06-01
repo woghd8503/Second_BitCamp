@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 /*
 [주소록 프로젝트]
@@ -15,7 +16,7 @@ using System.Threading.Tasks;
     int selectMenu();
   3) 주소 정보 입력(이름, 전화번호, 주소)
     void insertAddress();
-  4) 주소 정보 검색(이름으로 검색)
+  4) 주소 정보 검색(이름으로 검색 후 정보출력)
     void searchAddress();
   5) 주소 정보 변경(이름으로 검색 후 변경)
     void updateAddress();
@@ -23,6 +24,10 @@ using System.Threading.Tasks;
     void deleteAddress();
   7) 주소 정보 전체 출력
     void printAllAddress();
+  8) 파일 로딩
+    void loadFileAddress();
+  9) 파일 저장
+    void SaveFileAddress();
   8) 종료
     void programExit();
   9) 화면 지우기
@@ -96,29 +101,74 @@ namespace _59_AddressMethod
             arrList.Add(address);
         }
 
-        static void searchAddress()
+        static Address searchAddress(string title)
         {
-            Console.WriteLine("------주소 검색------");
+            Console.WriteLine("------{0}------", title);
             Console.Write("검색할 이름 입력 >> ");
             string name = Console.ReadLine();
-            for(int i = 0; i < arrList.Count; i++)
+            for (int i = 0; i < arrList.Count; i++)
             {
                 Address address = (Address)arrList[i];
-                if(address.Name == name)    // 찾았다
+                if (address.Name == name)    // 찾았다
                 {
-                    address.showInfo();
-                    Console.ReadLine();
-                    break;
+                    return address;
                 }
             }
+
+            return null;
+        }
+
+        static void searchAddress()
+        {
+            Address address = searchAddress("주소 검색");
+            if(address != null)
+                address.showInfo();
+            else
+                Console.WriteLine("검색 대상이 없습니다...");
+
+            Console.ReadLine();
         }
 
         static void updateAddress()
         {
+            Address address = searchAddress("주소 수정");
+            if (address != null)
+            {
+                Console.Write("수정 이름: ");
+                string name = Console.ReadLine();
+                Console.Write("수정 전화: ");
+                string phone = Console.ReadLine();
+                Console.Write("수정 주소: ");
+                string addr = Console.ReadLine();
+                address.Name = name;
+                address.Phone = phone;
+                address.Addr = addr;
+                address.showInfo();
+            }
+            else
+                Console.WriteLine("수정 대상이 없습니다...");
+
+            Console.ReadLine();
         }
 
         static void deleteAddress()
         {
+            Address address = searchAddress("주소 삭제");
+            if (address != null)
+            {
+                address.showInfo();
+                Console.Write("진짜 삭제하시겠습니까(y/n) >> ");
+                string answer = Console.ReadLine();
+
+                if (answer == "y" || answer == "Y")
+                    arrList.Remove(address);
+                else
+                    Console.WriteLine("삭제가 취소되었습니다~");
+            }
+            else
+                Console.WriteLine("삭제 대상이 없습니다...");
+
+            Console.ReadLine();
         }
 
         static void printAllAddress()
@@ -131,8 +181,71 @@ namespace _59_AddressMethod
             Console.ReadLine();
         }
 
+        static void loadFileAddress()
+        {
+            StreamReader sr = null;
+            //파일입출력/DB 연결/Network통신 등 우리 프로그램
+            //내부가 아니라 외부시스템 /HW와 연결되어야 할 상황에
+            //만약 발생할 수 있는 예외상황을 대비하기 위한 처리
+
+            try // 코드 실행을 시도한다
+            {
+                sr = new StreamReader("address.txt");
+                Address address = null;
+                int step = 0;
+                while (sr.Peek() >= 0) // 읽을 내용이 있다.
+                {
+                    string str = sr.ReadLine();
+                    if (step == 0)
+                    {
+                        address = new Address();
+                        address.Name = str;
+                        step++;
+                    }
+                    else if (step == 1)
+                    {
+                        address.Phone = str;
+                        step++;
+                    } else if(step == 2)
+                    {
+                        address.Addr = str;
+                        step++;
+                    }else
+                    {
+                        step = 0;
+                        arrList.Add(address);
+                    }
+                }
+            }
+            catch (Exception e) // 예외 에러를 잡는다.
+            {
+                Console.WriteLine(e.Message);    // 원인 파악
+                Console.WriteLine(e.StackTrace); // 위치
+
+            }
+            finally // 정성 or 예외든 무조건 마무리한다.
+            {
+                if(sr != null)
+                sr.Close();
+            }
+        }
+        static void saveFileAddress()
+        {
+            StreamWriter sw = new StreamWriter("address.txt");
+            for(int i = 0; i< arrList.Count; i++)
+            {
+                Address address = (Address)arrList[i];
+                sw.WriteLine(address.Name);
+                sw.WriteLine(address.Phone);
+                sw.WriteLine(address.Addr);
+                sw.WriteLine();
+            }
+
+            sw.Close();
+        }
         static void programExit()
         {
+            saveFileAddress();
             Console.WriteLine("안녕히 계세요~");
         }
 
@@ -143,6 +256,8 @@ namespace _59_AddressMethod
 
         static void mainLoop()
         {
+            loadFileAddress();
+
             bool isRun = true;
             while (isRun)
             {
