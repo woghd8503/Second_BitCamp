@@ -113,7 +113,6 @@ namespace _59_AddressMethod_1
                         return address;
                     }
                 }
-
                 return null;
             }
 

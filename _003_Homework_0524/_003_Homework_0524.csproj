@@ -8,14 +8,16 @@
   <ItemGroup>
     <Compile Remove="HomeWork.cs" />
     <Compile Remove="HomeWork1.cs" />
+    <Compile Remove="HomeWork2.cs" />
     <Compile Remove="HomeWork3.cs" />
-    <Compile Remove="HomeWork4.cs" />
+    <Compile Remove="HomeWork3_Copy.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="HomeWork.cs" />
     <None Include="HomeWork1.cs" />
-    <None Include="HomeWork4.cs" />
+    <None Include="HomeWork2.cs" />
+    <None Include="HomeWork3_Copy.cs" />
     <Resource Include="HomeWork3.cs" />
   </ItemGroup>
 

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_006_Homework_0602</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="HomeWork.cs" />
+    <Compile Remove="HomeWork1.cs" />
+    <Compile Remove="HomeWork2.cs" />
+    <Compile Remove="HomeWork3.cs" />
+    <Compile Remove="HomeWork4.cs" />
+    <Compile Remove="HomeWork5.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="HomeWork.cs" />
+    <None Include="HomeWork1.cs" />
+    <None Include="HomeWork2.cs" />
+    <None Include="HomeWork3.cs" />
+    <None Include="HomeWork5.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="HomeWork4.cs" />
+  </ItemGroup>
+
+</Project>

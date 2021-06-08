@@ -6,12 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="HomeWork1.cs" />
+    <Compile Remove="HomeWork.cs" />
     <Compile Remove="HomeWork4%28AddressMethod%29.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="HomeWork1.cs" />
+    <None Include="HomeWork.cs" />
     <None Include="HomeWork4(AddressMethod).cs" />
   </ItemGroup>
 

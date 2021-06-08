@@ -102,12 +102,45 @@ namespace _003_Homework_0524
 
         private static void Q2()
         {
+            //2. 원의 반지름 정보를 전달하면,
+            //   원의 넓이를 계산하여 반환하는 메서드와
+            //   원의 둘레를 계산하여 반환하는 메서드를 정의하고
+            //   main에서 사용하세요
+            Console.WriteLine("반지름을 입력: ");
+            float radious = float.Parse(Console.ReadLine());
 
+            float Calc(float radious)
+            {
+                float result = radious * radious * 3.14f;
+                return result;
+            }
+            Console.WriteLine($"원의 넓이는 {Calc(radious)}");
         }
 
         private static void Q3()
         {
+            //3. 전달된 값이 소스(prime number)인지 아닌지 판단하여
+            //   소수인 경우는 true를, 소수가 아닌 경우는 false를
+            //   반환하는 메서드를 정의하고,
+            //   이를 이용해서 1 이상 100이하의 소수를 전부 출력할 수 있도록
+            //   main 메서드를 정의하세요.
+            bool FindPrimeNum(int num)
+            {
+                if (num <= 1)
+                    return false;
+                for(int i = 2; i < num; i++)
+                {
+                    if (num % i == 0)
+                        return false;
+                }
+                return true;
+            }
 
+            for(int i = 0; i <= 100; i ++)
+            {
+                if (FindPrimeNum(i) == true)
+                    Console.WriteLine(" " + i);
+            }
         }
         private static void Q4()
         {

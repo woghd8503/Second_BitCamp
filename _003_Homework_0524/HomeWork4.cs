@@ -4,10 +4,44 @@ using System.Text;
 
 namespace _003_Homework_0524
 {
-//1. 중화요리집을 임의대로 클래스로 자유롭게 만드세요
+    //1. 중화요리집을 임의대로 클래스로 자유롭게 만드세요
 
-//2. 학생이 아침에 일어나서 준비하고
-//   공부하다 가는 일과를 클래스로 자유롭게 만드세요.
+    //2. 학생이 아침에 일어나서 준비하고
+    //   공부하다 가는 일과를 클래스로 자유롭게 만드세요.
+    class Restaurnat
+    {
+        string[] menu = new string[6] { "짜장면", "짬뽕", "탕수육", "유산슬", "울면", "Exit" };
+        string selFood = "";
+        int sel = 0;
+
+        public void ShowMenu()
+        {
+            Console.WriteLine("=======================");
+            Console.WriteLine("원하시는 메뉴를 고르시오.");
+            Console.WriteLine("=======================");
+            for (int i = 0; i < menu.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {menu[i]}");
+            }
+        }
+        public string SelMenu()
+        {
+            sel = Int32.Parse(Console.ReadLine());
+            selFood = menu[sel -1];
+            return selFood;
+        }
+
+        public void deliveryFood()
+        {
+            Console.WriteLine($"선택하신 음식은 [{selFood}] 입니다.");
+        }
+    }
+    class DailyStudying
+    {
+
+    }
+
+
     class HomeWork4
     {
         private static void ClearScreen()
@@ -17,6 +51,7 @@ namespace _003_Homework_0524
         }
         private static void SelectQestion()
         {
+            Restaurnat rest = new Restaurnat();
             while (true)
             {
                 Console.WriteLine("--------------------------------------------------------------------------------");
@@ -29,40 +64,17 @@ namespace _003_Homework_0524
                 switch (sel)
                 {
                     case 1:
-                        Q1();
+                        while (true)
+                        {
+                            ClearScreen();
+                            rest.ShowMenu();
+                            if (rest.SelMenu() == "Exit")
+                                break;
+                            rest.deliveryFood();
+                        }
                         break;
                     case 2:
-                        Q2();
-                        break;
-                    case 3:
-                        Q3();
-                        break;
-                    case 4:
-                        Q4();
-                        break;
-                    case 5:
-                        Q5();
-                        break;
-                    case 6:
-                        Q6();
-                        break;
-                    case 7:
-                        Q7();
-                        break;
-                    case 8:
-                        Q8();
-                        break;
-                    case 9:
-                        Q9();
-                        break;
-                    case 10:
-                        Q10();
-                        break;
-                    case 11:
-                        Q11();
-                        break;
-                    case 12:
-                        Q12();
+                        
                         break;
                     default:
                         Console.WriteLine("잘못 입력하셨습니다.");
@@ -71,27 +83,9 @@ namespace _003_Homework_0524
                 ClearScreen();
             }
         }
-
-        private static void Q1()
+        static void Main(string[] args)
         {
-            ClearScreen();
-            Console.WriteLine("--------------------------------------------------------------------------------");
-            Console.WriteLine("\n\t1. 정수 10개를 입력받아 배열에 저장 \n\t   이 정수중에서 3의 배수만 출력");
-            Console.WriteLine("--------------------------------------------------------------------------------");
-
-            int[] input = new int[10];
-
-            for (int i = 0; i < input.Length; i++)
-            {
-                Console.Write($"{i + 1}번째 양의정수를 입력: ");
-                input[i] = Int32.Parse(Console.ReadLine());
-            }
-            Console.WriteLine("\n[결과 값]\n");
-            for (int i = 0; i < input.Length; i++)
-            {
-                if (input[i] % 3 == 0)
-                    Console.WriteLine("\t 입력하신 숫자중 3의 배수는: {0}", input[i]);
-            }
+            SelectQestion();
         }
     }
 }
