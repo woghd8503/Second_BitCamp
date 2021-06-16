@@ -49,6 +49,8 @@ namespace _114_MultiThreadServer
                 Console.WriteLine("[서버] 클라이언트 스레드 담당");
             }
         }
+
+
         static void threadRead(object sock)
         {
             Socket connSocket = (Socket)sock;

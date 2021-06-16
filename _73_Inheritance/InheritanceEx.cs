@@ -9,6 +9,11 @@ namespace _73_Inheritance
         {
             Console.WriteLine("현금{0}을 가졌다", money);
         }
+        public void CleanScreen()
+        {
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
     // Father는 GrandFather를 상속했다.
     class Father : GrandFather
@@ -27,7 +32,7 @@ namespace _73_Inheritance
             Father father = new Father();
             Console.WriteLine(father.money);
             father.wealth();
-
+            father.CleanScreen();
             Child child = new Child();
             Console.WriteLine(child.money);
             child.wealth();
