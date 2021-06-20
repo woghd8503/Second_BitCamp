@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace _58_RandomStar
+namespace _058_RandomStar
 {
     class RandomStarEx
     {
@@ -47,7 +43,7 @@ namespace _58_RandomStar
             Random rand = new Random();
             // StarPosition객체를 저장할 수 있는 100개짜리 참조변수 배열
             StarPosition[] arrStar = new StarPosition[100];
-            for(int i = 0; i < arrStar.Length; i++)
+            for (int i = 0; i < arrStar.Length; i++)
             {
                 int left = rand.Next(80);
                 int top = rand.Next(24);
@@ -61,7 +57,7 @@ namespace _58_RandomStar
                 System.Threading.Thread.Sleep(100);
             }
 
-            for(int i = arrStar.Length - 1; i >= 0; i--)
+            for (int i = arrStar.Length - 1; i >= 0; i--)
             {
                 Console.CursorLeft = arrStar[i].left;
                 Console.CursorTop = arrStar[i].top;
@@ -89,7 +85,7 @@ namespace _58_RandomStar
                 System.Threading.Thread.Sleep(100);
             }
 
-            for (int i = arrList.Count-1; i >= 0; i--)
+            for (int i = arrList.Count - 1; i >= 0; i--)
             {
                 StarPosition starPos = (StarPosition)arrList[i];
                 Console.CursorLeft = starPos.left;
